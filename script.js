@@ -1,7 +1,7 @@
 const date = new Date();
 
 const renderCalendar = () => {
-    date.setData(1);
+    date.setDate(1);
 
     const monthDays = document.querySelector(".days");
 
@@ -55,6 +55,11 @@ const renderCalendar = () => {
         monthDays.innerHTML = days;        
     }
 };
+
+document.querySelector(".prev").addEventListener("click", () => {
+    date.setMonth(date.getMonth() - 1);
+    renderCalendar();
+});
 
 document.querySelector(".next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1);
